@@ -32,13 +32,13 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   let multiply = a * b;
   let string = 'The product of ' + a + ' and ' + b + ' is ' + multiply +'.';
-  //return an array- 2 elements a multipy and a string
+
   return [multiply,string];
 }
 testMultiply(5, 9);
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -57,10 +57,18 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 // you get back an array from sum!!!
 // make sure your get the correct index number to get the number from sum
+
+let sum1 = sum(a, b);
+let sum2 = sum(sum1[0], c);
+let mult1 = multiply(a, b);
+let mult2 = multiply(mult1[0], c);
+let string1 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2[0] + '.'
+let string2  = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mult2[0] + '.'
+return [sum2[0], mult2[0], string1, string2]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
